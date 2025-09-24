@@ -19,7 +19,8 @@ export class ContactScene {
 
   private async loadResumeData(): Promise<void> {
     try {
-      const response = await fetch('/resume.json');
+      const base = import.meta.env.BASE_URL || '/';
+      const response = await fetch(`${base}resume.json`);
       this.resumeData = await response.json();
     } catch (error) {
       console.error('Failed to load resume data:', error);
