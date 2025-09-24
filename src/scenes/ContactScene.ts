@@ -70,9 +70,9 @@ export class ContactScene {
         <div class="flex items-center justify-center min-h-screen p-6">
           <div class="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-            <!-- Contact Info Block -->
+            <!-- Direct Communications Block -->
             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 mb-8">
-              <h2 class="text-2xl font-bold text-white mb-4">Contact Info</h2>
+              <h2 class="text-2xl font-bold text-white mb-4">Direct Communications</h2>
               <ul class="space-y-2 text-lg">
                 <li><span class="font-semibold text-white">Name:</span> <span class="text-racing-smoke">${info.name || ''}</span></li>
                 <li><span class="font-semibold text-white">Location:</span> <span class="text-racing-smoke">${info.location || ''}</span></li>
