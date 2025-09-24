@@ -13,6 +13,8 @@ export class GarageScene {
     this.container.innerHTML = this.getHTML();
     this.attachEventListeners();
     this.initializeAnimations();
+    // Ensure modal is hidden on initial render
+    this.hideLeaderboard();
   }
 
   private getHTML(): string {
@@ -124,7 +126,7 @@ export class GarageScene {
         <div class="modal-content">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-racing font-bold text-racing-black dark:text-white">🏆 Leaderboard</h2>
-            <button id="close-leaderboard" class="text-2xl hover:text-racing-red" aria-label="Close leaderboard">✕</button>
+            <button id="close-leaderboard" class="text-2xl hover:text-racing-red transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Close leaderboard">✕</button>
           </div>
           <div id="leaderboard-content">
             ${this.renderLeaderboard()}
@@ -212,6 +214,14 @@ export class GarageScene {
     // Modal controls
     const closeLeaderboard = document.getElementById('close-leaderboard');
     closeLeaderboard?.addEventListener('click', () => this.hideLeaderboard());
+    
+    // Click outside modal to close
+    const leaderboardModal = document.getElementById('leaderboard-modal');
+    leaderboardModal?.addEventListener('click', (e) => {
+      if (e.target === leaderboardModal) {
+        this.hideLeaderboard();
+      }
+    });
 
     // Reset data
     const resetBtn = document.getElementById('reset-data-btn');
@@ -259,7 +269,9 @@ export class GarageScene {
     const modal = document.getElementById('leaderboard-modal');
     if (modal) {
       modal.classList.remove('hidden');
+      modal.classList.add('flex');
       modal.setAttribute('aria-hidden', 'false');
+      modal.style.display = 'flex';
       
       // Focus the close button
       const closeBtn = document.getElementById('close-leaderboard');
@@ -271,7 +283,9 @@ export class GarageScene {
     const modal = document.getElementById('leaderboard-modal');
     if (modal) {
       modal.classList.add('hidden');
+      modal.classList.remove('flex');
       modal.setAttribute('aria-hidden', 'true');
+      modal.style.display = 'none';
     }
   }
 
