@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   // Set base to repository name for GitHub Pages deployment
-  // Change 'f1-portfolio' to your actual repository name if different
-  base: process.env.NODE_ENV === 'production' ? '/f1-portfolio/' : '/',
+  // Changed to 'portfolio' to match your actual repo name
+  base: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
   
   build: {
     outDir: 'dist',
