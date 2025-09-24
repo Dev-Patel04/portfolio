@@ -49,59 +49,128 @@ export class ContactScene {
     const info = this.resumeData.personalInfo || {};
 
     return `
-      <div class="contact-scene min-h-screen racing-gradient relative">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 opacity-5">
-          <div class="checkered-pattern"></div>
+      <div class="contact-scene min-h-screen racing-gradient relative overflow-hidden">
+        <!-- Enhanced Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+          <div class="checkered-pattern animate-pulse"></div>
         </div>
+        
+        <!-- Racing Stripes -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-racing-red via-yellow-400 to-racing-red"></div>
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-racing-red via-yellow-400 to-racing-red"></div>
 
         <!-- Header -->
         <div class="absolute top-6 left-6 z-20">
           <button 
             id="back-to-garage" 
-            class="flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-racing-red text-racing-red hover:bg-racing-red hover:text-white transition-all duration-300"
+            class="flex items-center gap-3 px-6 py-3 rounded-lg border-2 border-racing-red text-racing-red hover:bg-racing-red hover:text-white transition-all duration-300 transform hover:scale-105 font-racing font-bold shadow-lg backdrop-blur-sm bg-black/20"
             aria-label="Return to garage"
           >
-            ← Garage
+            ← GARAGE
           </button>
         </div>
 
         <!-- Main Content -->
         <div class="flex items-center justify-center min-h-screen p-6">
-          <div class="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-            <!-- Direct Communications Block -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 mb-8">
-              <h2 class="text-2xl font-bold text-white mb-4">Direct Communications</h2>
-              <ul class="space-y-2 text-lg">
-                <li><span class="font-semibold text-white">Name:</span> <span class="text-racing-smoke">${info.name || ''}</span></li>
-                <li><span class="font-semibold text-white">Location:</span> <span class="text-racing-smoke">${info.location || ''}</span></li>
-                <li><span class="font-semibold text-white">Email:</span> <a href="mailto:${info.email || ''}" class="text-racing-red underline">${info.email || ''}</a></li>
-                <li><span class="font-semibold text-white">Phone:</span> <a href="tel:${info.phone || ''}" class="text-racing-red underline">${info.phone || ''}</a></li>
-                <li><span class="font-semibold text-white">LinkedIn:</span> <a href="${info.linkedin || '#'}" target="_blank" rel="noopener" class="text-racing-red underline">${info.linkedin || ''}</a></li>
-                <li><span class="font-semibold text-white">GitHub:</span> <a href="${info.github || '#'}" target="_blank" rel="noopener" class="text-racing-red underline">${info.github || ''}</a></li>
-              </ul>
+          <div class="max-w-6xl w-full">
+            
+            <!-- Hero Section -->
+            <div class="text-center mb-12">
+              <h1 class="text-6xl md:text-8xl font-racing font-black text-white mb-4 tracking-wider">
+                🏁 CONTACT
+              </h1>
+              <p class="text-2xl text-racing-smoke max-w-2xl mx-auto">
+                Ready to <span class="text-racing-red font-bold animate-pulse">accelerate</span> your next project? Let's race towards success together!
+              </p>
             </div>
 
-            <!-- Contact Form -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-              <div class="mb-8">
-                <h1 class="text-4xl md:text-5xl font-racing font-black text-white mb-4">
-                  🏁 CONTACT
-                </h1>
-                <p class="text-xl text-racing-smoke">
-                  Ready to <span class="text-racing-red font-bold">accelerate</span> your next project?
-                </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+              <!-- Direct Communications Block -->
+              <div class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 bg-racing-red rounded-full flex items-center justify-center">
+                    <span class="text-2xl">📞</span>
+                  </div>
+                  <h2 class="text-3xl font-racing font-black text-white">DIRECT COMMUNICATIONS</h2>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="group p-4 rounded-lg bg-black/20 hover:bg-black/40 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">👤</span>
+                      <div>
+                        <span class="text-sm font-racing text-racing-red">DRIVER</span>
+                        <p class="text-xl font-bold text-white">${info.name || ''}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group p-4 rounded-lg bg-black/20 hover:bg-black/40 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📍</span>
+                      <div>
+                        <span class="text-sm font-racing text-racing-red">LOCATION</span>
+                        <p class="text-xl font-bold text-white">${info.location || ''}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="mailto:${info.email || ''}" class="group block p-4 rounded-lg bg-black/20 hover:bg-racing-red/20 hover:border-racing-red border border-transparent transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📧</span>
+                      <div>
+                        <span class="text-sm font-racing text-racing-red">EMAIL</span>
+                        <p class="text-xl font-bold text-white group-hover:text-racing-red">${info.email || ''}</p>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="tel:${info.phone || ''}" class="group block p-4 rounded-lg bg-black/20 hover:bg-racing-red/20 hover:border-racing-red border border-transparent transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📱</span>
+                      <div>
+                        <span class="text-sm font-racing text-racing-red">PHONE</span>
+                        <p class="text-xl font-bold text-white group-hover:text-racing-red">${info.phone || ''}</p>
+                      </div>
+                    </div>
+                  </a>
+
+                  <div class="grid grid-cols-2 gap-4">
+                    <a href="${info.linkedin || '#'}" target="_blank" rel="noopener" class="group block p-4 rounded-lg bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/40 hover:to-blue-800/40 border border-blue-500/30 hover:border-blue-400 transition-all duration-300">
+                      <div class="text-center">
+                        <span class="text-2xl block mb-2">💼</span>
+                        <span class="text-sm font-racing text-blue-300">LINKEDIN</span>
+                      </div>
+                    </a>
+
+                    <a href="${info.github || '#'}" target="_blank" rel="noopener" class="group block p-4 rounded-lg bg-gradient-to-r from-gray-600/20 to-gray-800/20 hover:from-gray-600/40 hover:to-gray-800/40 border border-gray-500/30 hover:border-gray-400 transition-all duration-300">
+                      <div class="text-center">
+                        <span class="text-2xl block mb-2">💻</span>
+                        <span class="text-sm font-racing text-gray-300">GITHUB</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              <form id="contact-form" class="space-y-6" novalidate>
-                <div>
-                  <label for="name" class="block text-sm font-racing font-bold text-white mb-2">
-                    Driver Name *
-                  </label>
-                  <input 
-                    type="text" 
-                    id="name" 
+              <!-- Contact Form -->
+              <div class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div class="flex items-center gap-3 mb-8">
+                  <div class="w-12 h-12 bg-racing-red rounded-full flex items-center justify-center">
+                    <span class="text-2xl">🏎️</span>
+                  </div>
+                  <h2 class="text-3xl font-racing font-black text-white">START YOUR ENGINE</h2>
+                </div>
+
+                <form id="contact-form" class="space-y-6" novalidate>
+                  <div class="group">
+                    <label for="name" class="block text-sm font-racing font-bold text-racing-red mb-2 uppercase tracking-wide">
+                      Driver Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name" 
                     name="name" 
                     required
                     class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-racing-smoke focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-transparent"
@@ -111,70 +180,74 @@ export class ContactScene {
                   <div id="name-error" class="text-red-400 text-sm mt-1 hidden"></div>
                 </div>
 
-                <div>
-                  <label for="email" class="block text-sm font-racing font-bold text-white mb-2">
-                    Pit Radio (Email) *
-                  </label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-racing-smoke focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-transparent"
-                    placeholder="your.email@example.com"
-                    aria-describedby="email-error"
-                  />
-                  <div id="email-error" class="text-red-400 text-sm mt-1 hidden"></div>
-                </div>
+                  <div class="group">
+                    <label for="email" class="block text-sm font-racing font-bold text-racing-red mb-2 uppercase tracking-wide">
+                      Pit Crew Contact *
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required
+                      class="w-full px-4 py-4 rounded-lg bg-black/30 border-2 border-white/20 text-white placeholder-racing-smoke focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-racing-red transition-all duration-300 group-hover:border-white/40 font-medium text-lg"
+                      placeholder="your.email@racingteam.com"
+                      aria-describedby="email-error"
+                    />
+                    <div id="email-error" class="text-red-400 text-sm mt-1 hidden font-racing"></div>
+                  </div>
 
-                <div>
-                  <label for="subject" class="block text-sm font-racing font-bold text-white mb-2">
-                    Race Strategy (Subject)
-                  </label>
-                  <select 
-                    id="subject" 
-                    name="subject"
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-transparent"
-                  >
-                    <option value="" class="bg-gray-800">Select a topic...</option>
-                    <option value="job-opportunity" class="bg-gray-800">🏆 Job Opportunity</option>
-                    <option value="project-collaboration" class="bg-gray-800">🤝 Project Collaboration</option>
-                    <option value="freelance-work" class="bg-gray-800">💼 Freelance Work</option>
-                    <option value="consulting" class="bg-gray-800">💡 Consulting</option>
-                    <option value="speaking" class="bg-gray-800">🎤 Speaking Engagement</option>
-                    <option value="other" class="bg-gray-800">💬 Other</option>
-                  </select>
-                </div>
+                  <div class="group">
+                    <label for="subject" class="block text-sm font-racing font-bold text-racing-red mb-2 uppercase tracking-wide">
+                      Race Category
+                    </label>
+                    <select 
+                      id="subject" 
+                      name="subject"
+                      class="w-full px-4 py-4 rounded-lg bg-black/30 border-2 border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-racing-red transition-all duration-300 group-hover:border-white/40 font-medium text-lg"
+                    >
+                      <option value="" class="bg-black text-white">Select project type...</option>
+                      <option value="Web Development" class="bg-black text-white">� Web Development</option>
+                      <option value="Mobile App" class="bg-black text-white">📱 Mobile Application</option>
+                      <option value="Full Stack" class="bg-black text-white">⚡ Full Stack Project</option>
+                      <option value="Consultation" class="bg-black text-white">💡 Technical Consultation</option>
+                      <option value="Collaboration" class="bg-black text-white">🤝 Partnership/Collaboration</option>
+                      <option value="Other" class="bg-black text-white">🏁 Other Racing Challenge</option>
+                    </select>
+                  </div>
 
-                <div>
-                  <label for="message" class="block text-sm font-racing font-bold text-white mb-2">
-                    Race Briefing (Message) *
-                  </label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    required
-                    rows="6"
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-racing-smoke focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-transparent resize-vertical"
-                    placeholder="Tell me about your project, opportunity, or how we can work together..."
-                    aria-describedby="message-error"
-                  ></textarea>
-                  <div id="message-error" class="text-red-400 text-sm mt-1 hidden"></div>
-                </div>
+                  <div class="group">
+                    <label for="message" class="block text-sm font-racing font-bold text-racing-red mb-2 uppercase tracking-wide">
+                      Race Strategy *
+                    </label>
+                    <textarea 
+                      id="message" 
+                      name="message" 
+                      required
+                      rows="6"
+                      class="w-full px-4 py-4 rounded-lg bg-black/30 border-2 border-white/20 text-white placeholder-racing-smoke resize-none focus:outline-none focus:ring-2 focus:ring-racing-red focus:border-racing-red transition-all duration-300 group-hover:border-white/40 font-medium text-lg"
+                      placeholder="Tell me about your project vision, timeline, and how we can race towards success together..."
+                      aria-describedby="message-error"
+                    ></textarea>
+                    <div id="message-error" class="text-red-400 text-sm mt-1 hidden font-racing"></div>
+                  </div>
 
-                <!-- Honeypot for spam protection -->
-                <div class="hidden">
-                  <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
-                </div>
+                  <!-- Honeypot for spam protection -->
+                  <div class="hidden">
+                    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+                  </div>
 
-                <button 
-                  type="submit" 
-                  class="racing-button w-full text-lg py-4 group relative overflow-hidden"
-                  id="submit-btn"
-                >
-                  <span class="relative z-10">🚀 Launch Message</span>
-                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                </button>
+                  <div class="pt-4">
+                    <button 
+                      type="submit" 
+                      id="submit-btn"
+                      class="w-full py-5 px-8 rounded-xl bg-gradient-to-r from-racing-red via-red-600 to-racing-red text-white font-racing font-black text-xl uppercase tracking-wider hover:from-red-600 hover:via-racing-red hover:to-red-600 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-lg border-2 border-racing-red hover:border-yellow-400 relative overflow-hidden group"
+                    >
+                      <span class="relative z-10 flex items-center justify-center gap-3">
+                        🏎️ START THE RACE 🏁
+                      </span>
+                      <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-racing-red/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </button>
+                  </div>
 
                 <!-- Form status -->
                 <div id="form-status" class="hidden p-4 rounded-lg text-center font-racing font-bold"></div>
