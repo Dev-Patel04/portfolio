@@ -46,6 +46,7 @@ export class ContactScene {
   private getHTML(): string {
     const badges = this.gameState.getBadges();
     const bestLap = this.gameState.getBestLapTime();
+    const info = this.resumeData.personalInfo || {};
 
     return `
       <div class="contact-scene min-h-screen racing-gradient relative">
@@ -68,7 +69,20 @@ export class ContactScene {
         <!-- Main Content -->
         <div class="flex items-center justify-center min-h-screen p-6">
           <div class="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
+            <!-- Contact Info Block -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 mb-8">
+              <h2 class="text-2xl font-bold text-white mb-4">Contact Info</h2>
+              <ul class="space-y-2 text-lg">
+                <li><span class="font-semibold text-white">Name:</span> <span class="text-racing-smoke">${info.name || ''}</span></li>
+                <li><span class="font-semibold text-white">Location:</span> <span class="text-racing-smoke">${info.location || ''}</span></li>
+                <li><span class="font-semibold text-white">Email:</span> <a href="mailto:${info.email || ''}" class="text-racing-red underline">${info.email || ''}</a></li>
+                <li><span class="font-semibold text-white">Phone:</span> <a href="tel:${info.phone || ''}" class="text-racing-red underline">${info.phone || ''}</a></li>
+                <li><span class="font-semibold text-white">LinkedIn:</span> <a href="${info.linkedin || '#'}" target="_blank" rel="noopener" class="text-racing-red underline">${info.linkedin || ''}</a></li>
+                <li><span class="font-semibold text-white">GitHub:</span> <a href="${info.github || '#'}" target="_blank" rel="noopener" class="text-racing-red underline">${info.github || ''}</a></li>
+              </ul>
+            </div>
+
             <!-- Contact Form -->
             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
               <div class="mb-8">
