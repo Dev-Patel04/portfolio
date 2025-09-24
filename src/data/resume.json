@@ -1,51 +1,50 @@
 {
   "personalInfo": {
     "name": "Dev Patel",
-    "title": "Full-Stack Developer & F1 Enthusiast",
-    "location": "Your City, Country",
-    "email": "your.email@example.com",
-    "phone": "+1 (555) 123-4567",
-    "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/Dev-Patel04",
-    "portfolio": "https://dev-patel04.github.io/portfolio"
+    "title": "Software Developer",
+    "location": "Toronto, Canada",
+    "email": "udevpatel@gmail.com",
+    "phone": "905-744-3575",
+    "linkedin": "https://www.linkedin.com/in/dev-patel-853141229/",
+    "github": "https://github.com/Dev-Patel04"
   },
   
   "summary": "Passionate full-stack developer with a love for clean code and fast performance, just like a Formula 1 race car. Experienced in modern web technologies and always ready to tackle new challenges at full throttle.",
   
   "skills": {
-    "frontend": ["JavaScript", "TypeScript", "React", "Vue.js", "Angular", "HTML5", "CSS3", "Tailwind CSS"],
-    "backend": ["Node.js", "Python", "Java", "PHP", "Express.js", "Django", "Flask"],
-    "database": ["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite"],
-    "tools": ["Git", "Docker", "AWS", "Azure", "Vite", "Webpack", "Jest", "Cypress"],
-    "other": ["GraphQL", "REST APIs", "Microservices", "CI/CD", "Agile/Scrum"]
+    "frontend": ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Vite"],
+    "backend": ["Node.js", "Python", "Express.js", "FastAPI", "REST APIs", "GraphQL"],
+    "database": ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"],
+    "tools": ["Git", "Docker", "AWS", "Vercel", "GitHub Actions", "VS Code", "Figma"],
+    "other": ["Web Performance", "Responsive Design", "UI/UX", "Agile/Scrum", "Team Leadership"]
   },
   
   "experience": [
     {
-      "title": "Senior Full-Stack Developer",
-      "company": "Tech Racing Solutions",
-      "location": "Remote",
-      "duration": "2023 - Present",
-      "description": "Lead developer for high-performance web applications, optimizing for speed and user experience.",
+      "title": "Full-Stack Developer",
+      "company": "Your Current Company",
+      "location": "Remote/Your City",
+      "duration": "2022 - Present",
+      "description": "Building modern web applications with focus on user experience and performance.",
       "achievements": [
-        "Built lightning-fast React applications with 95+ Lighthouse scores",
-        "Implemented microservices architecture reducing load times by 40%",
-        "Mentored junior developers in best practices and code optimization"
+        "Developed responsive web applications using React and TypeScript",
+        "Improved application performance by optimizing code and implementing best practices",
+        "Collaborated with cross-functional teams to deliver high-quality products"
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"]
+      "technologies": ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"]
     },
     {
-      "title": "Full-Stack Developer",
-      "company": "Digital Motorsports Inc",
+      "title": "Frontend Developer",
+      "company": "Previous Company",
       "location": "Your City",
-      "duration": "2021 - 2023",
-      "description": "Developed and maintained web applications for automotive industry clients.",
+      "duration": "2020 - 2022",
+      "description": "Focused on creating engaging user interfaces and improving user experience.",
       "achievements": [
-        "Created responsive web applications serving 10k+ daily users",
-        "Integrated third-party APIs and payment processing systems",
-        "Reduced bug reports by 60% through comprehensive testing"
+        "Built interactive web interfaces that increased user engagement",
+        "Worked with design teams to implement pixel-perfect UI components",
+        "Contributed to improving development workflows and code quality"
       ],
-      "technologies": ["Vue.js", "Python", "Django", "MySQL", "Docker"]
+      "technologies": ["JavaScript", "React", "CSS3", "Git", "Figma"]
     },
     {
       "title": "Junior Software Developer",
@@ -65,11 +64,11 @@
   "education": [
     {
       "degree": "Bachelor of Science in Computer Science",
-      "institution": "University of Technology",
-      "location": "Your City",
+      "institution": "Your University",
+      "location": "Your City, State",
       "graduation": "2020",
-      "gpa": "3.8/4.0",
-      "relevant_courses": ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"]
+      "gpa": "3.7/4.0",
+      "relevant_courses": ["Data Structures", "Web Development", "Software Engineering", "Database Systems", "Computer Networks"]
     }
   ],
   
