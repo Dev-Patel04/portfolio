@@ -12,7 +12,16 @@ export class ContactScene {
   }
 
   async render(): Promise<void> {
-    await this.loadResumeData();
+    let errorMsg = '';
+    try {
+      await this.loadResumeData();
+    } catch (e) {
+      errorMsg = 'Failed to load resume data.';
+    }
+    if (!this.resumeData || !this.resumeData.personalInfo) {
+      this.container.innerHTML = `<div style="color:red; padding:2rem; font-size:1.5rem;">${errorMsg || 'Resume data missing or invalid.'}</div>`;
+      return;
+    }
     this.container.innerHTML = this.getHTML();
     this.attachEventListeners();
   }
