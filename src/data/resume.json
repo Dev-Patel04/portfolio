@@ -1,0 +1,115 @@
+{
+  "personalInfo": {
+    "name": "Dev Patel",
+    "title": "Full-Stack Developer & F1 Enthusiast",
+    "location": "Your City, Country",
+    "email": "your.email@example.com",
+    "phone": "+1 (555) 123-4567",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/Dev-Patel04",
+    "portfolio": "https://dev-patel04.github.io/portfolio"
+  },
+  
+  "summary": "Passionate full-stack developer with a love for clean code and fast performance, just like a Formula 1 race car. Experienced in modern web technologies and always ready to tackle new challenges at full throttle.",
+  
+  "skills": {
+    "frontend": ["JavaScript", "TypeScript", "React", "Vue.js", "Angular", "HTML5", "CSS3", "Tailwind CSS"],
+    "backend": ["Node.js", "Python", "Java", "PHP", "Express.js", "Django", "Flask"],
+    "database": ["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite"],
+    "tools": ["Git", "Docker", "AWS", "Azure", "Vite", "Webpack", "Jest", "Cypress"],
+    "other": ["GraphQL", "REST APIs", "Microservices", "CI/CD", "Agile/Scrum"]
+  },
+  
+  "experience": [
+    {
+      "title": "Senior Full-Stack Developer",
+      "company": "Tech Racing Solutions",
+      "location": "Remote",
+      "duration": "2023 - Present",
+      "description": "Lead developer for high-performance web applications, optimizing for speed and user experience.",
+      "achievements": [
+        "Built lightning-fast React applications with 95+ Lighthouse scores",
+        "Implemented microservices architecture reducing load times by 40%",
+        "Mentored junior developers in best practices and code optimization"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"]
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Digital Motorsports Inc",
+      "location": "Your City",
+      "duration": "2021 - 2023",
+      "description": "Developed and maintained web applications for automotive industry clients.",
+      "achievements": [
+        "Created responsive web applications serving 10k+ daily users",
+        "Integrated third-party APIs and payment processing systems",
+        "Reduced bug reports by 60% through comprehensive testing"
+      ],
+      "technologies": ["Vue.js", "Python", "Django", "MySQL", "Docker"]
+    },
+    {
+      "title": "Junior Software Developer",
+      "company": "StartupRace Ltd",
+      "location": "Your City",
+      "duration": "2020 - 2021",
+      "description": "Entry-level position focusing on frontend development and learning industry standards.",
+      "achievements": [
+        "Converted 15+ design mockups to pixel-perfect web interfaces",
+        "Collaborated with cross-functional teams using Agile methodology",
+        "Improved website performance by implementing lazy loading"
+      ],
+      "technologies": ["JavaScript", "HTML", "CSS", "Git", "Figma"]
+    }
+  ],
+  
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University of Technology",
+      "location": "Your City",
+      "graduation": "2020",
+      "gpa": "3.8/4.0",
+      "relevant_courses": ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"]
+    }
+  ],
+  
+  "projects": [
+    {
+      "name": "F1 Portfolio Website",
+      "description": "Interactive Formula 1 themed portfolio with gamification elements",
+      "technologies": ["TypeScript", "Vite", "Tailwind CSS", "SVG", "Local Storage"],
+      "github": "https://github.com/Dev-Patel04/portfolio",
+      "live": "https://dev-patel04.github.io/portfolio",
+      "highlights": ["Racing-themed UI/UX", "Interactive pit stop system", "Achievement badges"]
+    }
+  ],
+  
+  "certifications": [
+    {
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credential": "aws.amazon.com/verification"
+    },
+    {
+      "name": "React Developer Certification",
+      "issuer": "Meta",
+      "date": "2022",
+      "credential": "coursera.org/verify/..."
+    }
+  ],
+  
+  "languages": [
+    { "name": "English", "level": "Native" },
+    { "name": "Spanish", "level": "Conversational" },
+    { "name": "Hindi", "level": "Fluent" }
+  ],
+  
+  "interests": [
+    "Formula 1 Racing",
+    "Web Performance Optimization", 
+    "Open Source Contributing",
+    "Technology Innovation",
+    "Motorsports Photography"
+  ]
+}

@@ -1,5 +1,6 @@
 import GameStateManager from '../utils/GameStateManager';
 import type { ContactForm } from '../types';
+import resumeData from '../data/resume.json';
 
 export class ContactScene {
   private readonly container: HTMLElement;
@@ -161,6 +162,43 @@ export class ContactScene {
                 ${badges.length > 0 ? this.renderBadges(badges.slice(-4)) : ''}
               </div>
 
+              <!-- Resume/Skills Section -->
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <h2 class="text-2xl font-racing font-bold text-white mb-4">🎯 Driver Profile</h2>
+                
+                <!-- Skills -->
+                <div class="mb-6">
+                  <h3 class="font-racing font-bold text-racing-gold mb-3">Tech Stack</h3>
+                  <div class="flex flex-wrap gap-2">
+                    ${resumeData.skills.frontend.slice(0, 6).map(skill => 
+                      `<span class="px-3 py-1 bg-racing-red/20 text-racing-red rounded-full text-sm font-medium">${skill}</span>`
+                    ).join('')}
+                  </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="mb-6">
+                  <h3 class="font-racing font-bold text-racing-gold mb-3">Experience</h3>
+                  <div class="space-y-3">
+                    ${resumeData.experience.slice(0, 2).map(exp => `
+                      <div>
+                        <div class="font-semibold text-white">${exp.title}</div>
+                        <div class="text-sm text-racing-smoke">${exp.duration} | ${exp.company}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                  <h3 class="font-racing font-bold text-racing-gold mb-3">Education</h3>
+                  <div>
+                    <div class="font-semibold text-white">${resumeData.education[0].degree}</div>
+                    <div class="text-sm text-racing-smoke">${resumeData.education[0].institution} | ${resumeData.education[0].graduation}</div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Contact Info -->
               <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h2 class="text-2xl font-racing font-bold text-white mb-4">📡 Direct Communication</h2>
@@ -170,8 +208,8 @@ export class ContactScene {
                     <span class="text-2xl">📧</span>
                     <div>
                       <div class="font-racing font-bold text-white">Email</div>
-                      <a href="mailto:your.email@example.com" class="text-racing-gold hover:text-racing-red transition-colors">
-                        your.email@example.com
+                      <a href="mailto:${resumeData.personalInfo.email}" class="text-racing-gold hover:text-racing-red transition-colors">
+                        ${resumeData.personalInfo.email}
                       </a>
                     </div>
                   </div>
@@ -470,11 +508,13 @@ Sent from F1 Racing Portfolio`;
   }
 
   private downloadResume(): void {
-    // In a real implementation, this would link to your actual resume
+    // Downloads your resume PDF
     const link = document.createElement('a');
-    link.href = '/assets/resume.pdf'; // Update with actual resume path
-    link.download = 'YourName_Resume.pdf';
+    link.href = '/Dev_Patel_Resume.pdf'; // Your actual resume file
+    link.download = 'Dev_Patel_Resume.pdf';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   }
 
   private scheduleCall(): void {
