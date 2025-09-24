@@ -90,7 +90,12 @@ export class App {
 
     // Render the scene
     if (this.currentScene && typeof this.currentScene.render === 'function') {
-      this.currentScene.render();
+      const renderResult = this.currentScene.render();
+      if (renderResult instanceof Promise) {
+        renderResult.catch(error => {
+          console.error('Scene render error:', error);
+        });
+      }
     }
 
     // Update game state
@@ -203,7 +208,12 @@ export class App {
 
   private refreshCurrentScene(): void {
     if (this.currentScene && typeof this.currentScene.render === 'function') {
-      this.currentScene.render();
+      const renderResult = this.currentScene.render();
+      if (renderResult instanceof Promise) {
+        renderResult.catch(error => {
+          console.error('Scene render error:', error);
+        });
+      }
     }
   }
 

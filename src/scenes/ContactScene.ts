@@ -1,19 +1,36 @@
 import GameStateManager from '../utils/GameStateManager';
 import type { ContactForm } from '../types';
-import resumeData from '../data/resume.json';
 
 export class ContactScene {
   private readonly container: HTMLElement;
   private readonly gameState: GameStateManager;
+  private resumeData: any = null;
 
   constructor(container: HTMLElement) {
     this.container = container;
     this.gameState = GameStateManager.getInstance();
   }
 
-  render(): void {
+  async render(): Promise<void> {
+    await this.loadResumeData();
     this.container.innerHTML = this.getHTML();
     this.attachEventListeners();
+  }
+
+  private async loadResumeData(): Promise<void> {
+    try {
+      const response = await fetch('/resume.json');
+      this.resumeData = await response.json();
+    } catch (error) {
+      console.error('Failed to load resume data:', error);
+      // Fallback data
+      this.resumeData = {
+        personalInfo: { name: 'Dev Patel', title: 'Software Developer', email: 'contact@example.com' },
+        skills: { frontend: ['JavaScript', 'React', 'TypeScript'] },
+        experience: [{ title: 'Developer', company: 'Company', duration: '2022-Present' }],
+        education: [{ degree: 'Computer Science', institution: 'University', graduation: '2020' }]
+      };
+    }
   }
 
   private getHTML(): string {
@@ -170,7 +187,7 @@ export class ContactScene {
                 <div class="mb-6">
                   <h3 class="font-racing font-bold text-racing-gold mb-3">Tech Stack</h3>
                   <div class="flex flex-wrap gap-2">
-                    ${resumeData.skills.frontend.slice(0, 6).map(skill => 
+                    ${this.resumeData.skills.frontend.slice(0, 6).map((skill: string) => 
                       `<span class="px-3 py-1 bg-racing-red/20 text-racing-red rounded-full text-sm font-medium">${skill}</span>`
                     ).join('')}
                   </div>
@@ -180,7 +197,7 @@ export class ContactScene {
                 <div class="mb-6">
                   <h3 class="font-racing font-bold text-racing-gold mb-3">Experience</h3>
                   <div class="space-y-3">
-                    ${resumeData.experience.slice(0, 2).map(exp => `
+                    ${this.resumeData.experience.slice(0, 2).map((exp: any) => `
                       <div>
                         <div class="font-semibold text-white">${exp.title}</div>
                         <div class="text-sm text-racing-smoke">${exp.duration} | ${exp.company}</div>
@@ -193,8 +210,8 @@ export class ContactScene {
                 <div>
                   <h3 class="font-racing font-bold text-racing-gold mb-3">Education</h3>
                   <div>
-                    <div class="font-semibold text-white">${resumeData.education[0].degree}</div>
-                    <div class="text-sm text-racing-smoke">${resumeData.education[0].institution} | ${resumeData.education[0].graduation}</div>
+                    <div class="font-semibold text-white">${this.resumeData.education[0].degree}</div>
+                    <div class="text-sm text-racing-smoke">${this.resumeData.education[0].institution} | ${this.resumeData.education[0].graduation}</div>
                   </div>
                 </div>
               </div>
@@ -208,8 +225,8 @@ export class ContactScene {
                     <span class="text-2xl">📧</span>
                     <div>
                       <div class="font-racing font-bold text-white">Email</div>
-                      <a href="mailto:${resumeData.personalInfo.email}" class="text-racing-gold hover:text-racing-red transition-colors">
-                        ${resumeData.personalInfo.email}
+                      <a href="mailto:${this.resumeData.personalInfo.email}" class="text-racing-gold hover:text-racing-red transition-colors">
+                        ${this.resumeData.personalInfo.email}
                       </a>
                     </div>
                   </div>
