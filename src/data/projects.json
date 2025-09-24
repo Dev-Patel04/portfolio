@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "E-Commerce Racing Platform",
+      "description": "A high-performance e-commerce platform built for speed, featuring real-time inventory management, lightning-fast search, and seamless checkout experience. Optimized for peak traffic conditions.",
+      "shortDescription": "Lightning-fast e-commerce platform with real-time features",
+      "techStack": ["React", "Node.js", "PostgreSQL", "Redis", "Docker", "AWS"],
+      "demoUrl": "https://demo.racing-ecommerce.com",
+      "codeUrl": "https://github.com/username/racing-ecommerce",
+      "imageUrl": "/assets/projects/ecommerce-preview.jpg",
+      "position": {
+        "x": 150,
+        "y": 200
+      },
+      "problems": [
+        "Reduced page load times by 60% through optimized caching strategies",
+        "Implemented real-time inventory tracking preventing overselling",
+        "Built scalable architecture handling 10k+ concurrent users"
+      ],
+      "category": "fullstack"
+    },
+    {
+      "id": "project-2",
+      "title": "AI Racing Analytics Dashboard",
+      "description": "Machine learning powered dashboard that analyzes racing performance data, predicts optimal strategies, and provides real-time insights. Features advanced data visualization and predictive modeling.",
+      "shortDescription": "ML-powered racing analytics with predictive insights",
+      "techStack": ["Python", "TensorFlow", "React", "D3.js", "FastAPI", "MongoDB"],
+      "demoUrl": "https://racing-analytics.vercel.app",
+      "codeUrl": "https://github.com/username/racing-analytics",
+      "imageUrl": "/assets/projects/analytics-preview.jpg",
+      "position": {
+        "x": 320,
+        "y": 180
+      },
+      "problems": [
+        "Developed ML models with 95% accuracy in performance prediction",
+        "Created interactive visualizations processing 1M+ data points",
+        "Implemented real-time data streaming with sub-second latency"
+      ],
+      "category": "ai"
+    },
+    {
+      "id": "project-3",
+      "title": "Mobile Racing Companion",
+      "description": "Cross-platform mobile application providing race tracking, team communication, and performance monitoring. Features offline capability and real-time synchronization across devices.",
+      "shortDescription": "Cross-platform mobile app for race tracking and team communication",
+      "techStack": ["React Native", "Firebase", "TypeScript", "GraphQL", "Expo"],
+      "demoUrl": "https://apps.apple.com/racing-companion",
+      "codeUrl": "https://github.com/username/racing-companion",
+      "imageUrl": "/assets/projects/mobile-preview.jpg",
+      "position": {
+        "x": 480,
+        "y": 250
+      },
+      "problems": [
+        "Achieved 99.9% uptime with offline-first architecture",
+        "Reduced battery consumption by 40% through optimization",
+        "Implemented secure real-time messaging for 500+ teams"
+      ],
+      "category": "mobile"
+    },
+    {
+      "id": "project-4",
+      "title": "Racing Event Management System",
+      "description": "Comprehensive backend system managing racing events, participant registration, scoring, and live updates. Built for high availability and real-time performance tracking.",
+      "shortDescription": "Scalable backend system for racing event management",
+      "techStack": ["Node.js", "Express", "PostgreSQL", "Redis", "WebSocket", "Docker"],
+      "demoUrl": "https://api.racing-events.com/docs",
+      "codeUrl": "https://github.com/username/racing-backend",
+      "imageUrl": "/assets/projects/backend-preview.jpg",
+      "position": {
+        "x": 280,
+        "y": 380
+      },
+      "problems": [
+        "Built fault-tolerant system handling 50k+ concurrent connections",
+        "Implemented real-time scoring with microsecond precision",
+        "Designed scalable microservices architecture on Kubernetes"
+      ],
+      "category": "backend"
+    }
+  ]
+}
