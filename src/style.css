@@ -205,7 +205,6 @@ body {
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -214,4 +213,140 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* F1 Car Styles */
+.f1-car {
+  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.f1-car .car-body {
+  position: relative;
+  z-index: 2;
+}
+
+.f1-car .car-exhaust {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(to left, #ff6b35, #ff4500, transparent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.f1-car .car-exhaust.exhausting {
+  width: 40px;
+  opacity: 1;
+  animation: exhaust-flame 0.8s ease-out;
+}
+
+@keyframes exhaust-flame {
+  0% {
+    width: 20px;
+    opacity: 1;
+  }
+  50% {
+    width: 50px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 30px;
+    opacity: 0;
+  }
+}
+
+/* Race Track Styles */
+.race-track-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-red) transparent;
+}
+
+.race-track-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.race-track-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.race-track-container::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: 4px;
+}
+
+/* Checkered Pattern */
+.checkered-finish {
+  background: repeating-conic-gradient(#fff 0deg 90deg, #000 90deg 180deg) 0 0/8px 8px;
+}
+
+.checkered-flag {
+  background: repeating-conic-gradient(#fff 0deg 90deg, #000 90deg 180deg) 0 0/16px 16px;
+}
+
+/* Pitstop Marker Enhancements */
+.pitstop-marker {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pitstop-marker:hover {
+  transform: translate(-50%, -50%) scale(1.15) !important;
+}
+
+.pitstop-marker:focus {
+  outline: 3px solid var(--racing-gold);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* Animation Utilities */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation for active pitstop */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Scale on hover/active */
+.scale-125 {
+  transform: translate(-50%, -50%) scale(1.25);
 }

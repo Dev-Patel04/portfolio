@@ -17,6 +17,18 @@ export interface Project {
   category: 'frontend' | 'backend' | 'fullstack' | 'mobile' | 'ai' | 'other';
 }
 
+// Experience for pitstop timeline
+export interface Experience {
+  id: string;
+  type: 'work' | 'education' | 'milestone';
+  title: string;
+  company: string;
+  duration: string;
+  description: string;
+  highlights: string[];
+  skills: string[];
+}
+
 // Game state management
 export interface GameState {
   currentScene: 'garage' | 'track' | 'contact';

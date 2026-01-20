@@ -1,0 +1,79 @@
+{
+    "experiences": [
+        {
+            "id": "exp-1",
+            "type": "work",
+            "title": "Software Engineer",
+            "company": "Your Company",
+            "duration": "2024 - Present",
+            "description": "Building scalable web applications and leading feature development.",
+            "highlights": [
+                "Led development of key features",
+                "Improved application performance by 40%",
+                "Mentored junior developers"
+            ],
+            "skills": [
+                "TypeScript",
+                "React",
+                "Node.js",
+                "AWS"
+            ]
+        },
+        {
+            "id": "exp-2",
+            "type": "work",
+            "title": "Junior Developer",
+            "company": "Previous Company",
+            "duration": "2022 - 2024",
+            "description": "Started my journey in software development, working on full-stack applications.",
+            "highlights": [
+                "Developed RESTful APIs",
+                "Built responsive UI components",
+                "Collaborated in agile teams"
+            ],
+            "skills": [
+                "JavaScript",
+                "React",
+                "Python",
+                "PostgreSQL"
+            ]
+        },
+        {
+            "id": "exp-3",
+            "type": "education",
+            "title": "Computer Science Degree",
+            "company": "University Name",
+            "duration": "2018 - 2022",
+            "description": "Bachelor's degree in Computer Science with focus on software engineering.",
+            "highlights": [
+                "Dean's List recognition",
+                "Capstone project: Full-stack web application",
+                "Relevant coursework: Data Structures, Algorithms, Web Development"
+            ],
+            "skills": [
+                "Java",
+                "Python",
+                "SQL",
+                "Data Structures"
+            ]
+        },
+        {
+            "id": "exp-4",
+            "type": "milestone",
+            "title": "Started Coding Journey",
+            "company": "Self-taught",
+            "duration": "2017",
+            "description": "Discovered passion for programming and began learning to code.",
+            "highlights": [
+                "Built first personal project",
+                "Completed online courses",
+                "Joined coding communities"
+            ],
+            "skills": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        }
+    ]
+}
